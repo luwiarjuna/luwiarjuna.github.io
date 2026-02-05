@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juna Tech - Jasa Desain Digital Profesional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --primary-dark: #3a56d4;
+            --secondary: #7209b7;
+            --accent: #f72585;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --success: #4cc9f0;
+            --dana-color: #00C2FF;
+            --dana-dark: #0080FF;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            background-color: var(--light);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 4px 12px var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+            box-shadow: 0 4px 8px rgba(67, 97, 238, 0.3);
+        }
+
+        .logo-text h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        .logo-text span {
+            color: var(--secondary);
+        }
+
+        .logo-text p {
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 8px 0;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a.active {
+            color: var(--primary);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary);
+            border-radius: 3px;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--dark);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.1) 0%, rgba(114, 9, 183, 0.1) 100%);
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: var(--dark);
+            line-height: 1.2;
+        }
+
+        .hero h2 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: var(--transition);
+            box-shadow: 0 6px 15px rgba(67, 97, 238, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(67, 97, 238, 0.4);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            position: relative;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.05);
+        }
+
+        .service-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-content h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .service-price {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .service-desc {
+            color: var(--gray);
+            margin-bottom: 20px;
+            flex-grow: 1;
+            font-size: 15px;
+        }
+
+        .service-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-detail {
+            flex: 1;
+            background-color: var(--light-gray);
+            color: var(--dark);
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-detail:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-whatsapp {
+            flex: 1;
+            background-color: #25D366;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            width: 100%;
+            max-width: 600px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .modal-header {
+            padding: 25px 30px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            position: relative;
+        }
+
+        .modal-header h3 {
+            font-size: 24px;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .modal-body {
+            padding: 30px;
+        }
+
+        .modal-service-img {
+            width: 100%;
+            height: 250px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .modal-service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-details {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .modal-detail-item h4 {
+            font-size: 16px;
+            color: var(--gray);
+            margin-bottom: 5px;
+        }
+
+        .modal-detail-item p {
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .modal-price {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 28px;
+        }
+
+        .modal-desc {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--dark);
+            margin-bottom: 30px;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-modal-dana {
+            flex: 1;
+            background: linear-gradient(135deg, var(--dana-color), var(--dana-dark));
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-modal-dana:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 194, 255, 0.4);
+        }
+
+        .btn-modal-whatsapp {
+            flex: 1;
+            background-color: #25D366;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-modal-whatsapp:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Dana Info Box */
+        .dana-info {
+            background: linear-gradient(135deg, rgba(0, 194, 255, 0.1), rgba(0, 128, 255, 0.1));
+            border-left: 4px solid var(--dana-color);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .dana-info h4 {
+            color: var(--dana-dark);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .dana-info p {
+            color: var(--dark);
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .dana-number {
+            background-color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            color: var(--dana-dark);
+            margin-top: 10px;
+            border: 2px solid var(--dana-color);
+            display: inline-block;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .dana-number:hover {
+            background-color: var(--dana-color);
+            color: white;
+        }
+
+        .copy-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: var(--dana-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 3000;
+            display: none;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Payment Instructions */
+        .payment-instructions {
+            background-color: var(--light-gray);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .payment-instructions h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .payment-instructions ol {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .payment-instructions li {
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+
+        .payment-instructions p {
+            color: var(--gray);
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        /* Fallback image styling */
+        .fallback-image {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .fallback-image i {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo .logo {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .footer-logo p {
+            color: var(--light-gray);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .footer-section h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-section h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-section ul li a {
+            color: var(--light-gray);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .contact-info {
+            list-style: none;
+        }
+
+        .contact-info li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .contact-info i {
+            color: var(--primary);
+            margin-right: 10px;
+            font-size: 18px;
+            margin-top: 3px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--light-gray);
+            font-size: 14px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 10px 20px var(--shadow);
+                padding: 20px;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h2 {
+                font-size: 32px;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+
+            .modal-details {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-actions {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 60px 0;
+            }
+
+            .services {
+                padding: 60px 0;
+            }
+
+            .section-title h2 {
+                font-size: 28px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .service-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-container">
+            <div class="logo-container">
+                <div class="logo">
+                    <span>JT</span>
+                </div>
+                <div class="logo-text">
+                    <h1>JUNA <span>TECH</span></h1>
+                    <p>Solusi Desain Digital Profesional</p>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#services">Layanan</a></li>
+                    <li><a href="#about">Tentang</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Solusi Digital <span>Profesional</span> untuk Bisnis Anda</h2>
+                <p>Juna Tech menyediakan jasa desain digital berkualitas dengan harga terjangkau. Dari website hingga desain grafis, kami siap membantu bisnis Anda berkembang.</p>
+                <a href="#services" class="cta-button">Lihat Layanan Kami</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Layanan Kami</h2>
+                <p>Berbagai jasa desain digital profesional untuk kebutuhan bisnis Anda</p>
+            </div>
+            
+            <div class="services-grid" id="servicesGrid">
+                <!-- Services will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Service Details -->
+    <div class="modal" id="serviceModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Detail Layanan</h3>
+                <button class="modal-close" id="modalClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-service-img">
+                    <img id="modalImage" src="" alt="Service Image" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 250\"><rect width=\"400\" height=\"250\" fill=\"%234361ee\"/><text x=\"50%\" y=\"50%\" font-family=\"Arial\" font-size=\"24\" fill=\"white\" text-anchor=\"middle\" dy=\".3em\">Gambar Layanan</text></svg>';">
+                </div>
+                
+                <div class="modal-details">
+                    <div class="modal-detail-item">
+                        <h4>Nama Layanan</h4>
+                        <p id="modalServiceName">-</p>
+                    </div>
+                    <div class="modal-detail-item">
+                        <h4>Harga</h4>
+                        <p id="modalPrice" class="modal-price">-</p>
+                    </div>
+                    <div class="modal-detail-item">
+                        <h4>Kategori</h4>
+                        <p id="modalCategory">-</p>
+                    </div>
+                    <div class="modal-detail-item">
+                        <h4>Estimasi Pengerjaan</h4>
+                        <p id="modalDuration">-</p>
+                    </div>
+                </div>
+                
+                <div class="modal-desc">
+                    <h4>Deskripsi Lengkap</h4>
+                    <p id="modalFullDesc">-</p>
+                </div>
+                
+                <!-- Dana Payment Info -->
+                <div class="dana-info">
+                    <h4><i class="fas fa-wallet"></i> Pembayaran via Dana</h4>
+                    <p>Klik nomor di bawah untuk menyalin, lalu buka aplikasi Dana:</p>
+                    <div class="dana-number" id="copyDanaNumber" title="Klik untuk menyalin nomor">
+                        +62 887 8840 707
+                    </div>
+                    <p style="margin-top: 10px;">Nama: <strong>Juna Tech</strong></p>
+                    <p><small>Nomor sudah disalin ke clipboard</small></p>
+                </div>
+                
+                <!-- Payment Instructions -->
+                <div class="payment-instructions">
+                    <h4><i class="fas fa-info-circle"></i> Cara Pembayaran:</h4>
+                    <ol>
+                        <li>Klik tombol "Buka Aplikasi Dana" di bawah</li>
+                        <li>Jika aplikasi Dana terbuka, nomor sudah otomatis tersalin</li>
+                        <li>Jika tidak, buka aplikasi Dana secara manual</li>
+                        <li>Pilih menu "Kirim" atau "Transfer"</li>
+                        <li>Tempelkan nomor yang sudah disalin: <strong>+62 887 8840 707</strong></li>
+                        <li>Masukkan nominal sesuai harga layanan</li>
+                        <li>Tambahkan catatan: nama layanan yang dipesan</li>
+                        <li>Konfirmasi dan selesaikan pembayaran</li>
+                    </ol>
+                    <p>Setelah pembayaran, konfirmasi via WhatsApp dengan mengirimkan bukti transfer.</p>
+                </div>
+                
+                <div class="modal-actions">
+                    <button class="btn-modal-dana" id="modalDanaBtn">
+                        <i class="fas fa-external-link-alt"></i> Buka Aplikasi Dana
+                    </button>
+                    <button class="btn-modal-whatsapp" id="modalWhatsAppBtn">
+                        <i class="fab fa-whatsapp"></i> Konfirmasi via WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Copy Notification -->
+    <div class="copy-notification" id="copyNotification">
+        <i class="fas fa-check-circle"></i> Nomor Dana disalin!
+    </div>
+
+    <!-- About Section -->
+    <section id="about" style="padding: 80px 0; background-color: var(--light-gray);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tentang Juna Tech</h2>
+                <p>Menghadirkan solusi digital kreatif untuk pertumbuhan bisnis Anda</p>
+            </div>
+            
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p style="font-size: 18px; margin-bottom: 30px; color: var(--dark);">
+                    Juna Tech didirikan dengan visi untuk membantu UMKM dan perusahaan dalam mengembangkan identitas digital mereka. 
+                    Dengan tim yang berpengalaman, kami berkomitmen memberikan hasil terbaik untuk setiap proyek klien.
+                </p>
+                
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px;">
+                    <div style="flex: 1; min-width: 200px; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 20px var(--shadow);">
+                        <i class="fas fa-award" style="font-size: 40px; color: var(--primary); margin-bottom: 20px;"></i>
+                        <h3 style="margin-bottom: 10px;">Berkualitas</h3>
+                        <p>Hasil desain berkualitas tinggi dengan detail yang diperhatikan.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 200px; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 20px var(--shadow);">
+                        <i class="fas fa-clock" style="font-size: 40px; color: var(--primary); margin-bottom: 20px;"></i>
+                        <h3 style="margin-bottom: 10px;">Tepat Waktu</h3>
+                        <p>Pengerjaan sesuai deadline yang disepakati bersama.</p>
+                    </div>
+                    
+                    <div style="flex: 1; min-width: 200px; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 20px var(--shadow);">
+                        <i class="fas fa-headset" style="font-size: 40px; color: var(--primary); margin-bottom: 20px;"></i>
+                        <h3 style="margin-bottom: 10px;">Support 24/7</h3>
+                        <p>Dukungan dan konsultasi kapan saja Anda butuhkan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">
+                        <span>JT</span>
+                    </div>
+                    <h3>Juna Tech</h3>
+                    <p>Solusi desain digital profesional untuk mengembangkan bisnis Anda di era digital.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Layanan</h4>
+                    <ul>
+                        <li><a href="#services">Desain Aplikasi/Website</a></li>
+                        <li><a href="#services">Desain Logo</a></li>
+                        <li><a href="#services">Desain Thumbnail</a></li>
+                        <li><a href="#services">Desain Banner & Poster</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Tautan Cepat</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Layanan</a></li>
+                        <li><a href="#about">Tentang Kami</a></li>
+                        <li><a href="#contact">Kontak</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Kontak & Pembayaran</h4>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Bekasi, Indonesia</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span>+62 887 8840 707</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>luwiarjuna@gmail.com</span>
+                        </li>
+                        <li>
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp: +62 887 8840 707</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-wallet"></i>
+                            <span>Dana: +62 887 8840 707</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Juna Tech. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Database for services - HARGA DESAIN APLIKASI DIUBAH MENJADI Rp. 90.000
+        const servicesData = [
+            {
+                id: 1,
+                name: "Desain Aplikasi/Website",
+                price: "Rp. 90.000", // DIUBAH DARI "Rp 80.000 - Rp 350.000" MENJADI "Rp. 90.000"
+                shortDesc: "Desain UI/UX aplikasi dan website modern",
+                fullDesc: "Layanan desain aplikasi mobile dan website dengan UI/UX yang modern, responsif, dan user-friendly. Kami membuat desain yang sesuai dengan kebutuhan bisnis Anda, mulai dari wireframe hingga prototype interaktif.",
+                category: "Desain Digital",
+                duration: "3-14 hari",
+                // GAMBAR PERTAMA: Desain website
+                image: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'><rect width='400' height='250' fill='%23212529'/><rect x='20' y='20' width='360' height='40' rx='5' fill='%234361ee'/><text x='200' y='45' font-family='Arial' font-size='14' fill='white' text-anchor='middle' font-weight='bold'>Menu</text><rect x='30' y='80' width='80' height='25' rx='5' fill='%237209b7'/><text x='70' y='96' font-family='Arial' font-size='10' fill='white' text-anchor='middle'>Profil</text><rect x='130' y='80' width='80' height='25' rx='5' fill='%237209b7'/><text x='170' y='96' font-family='Arial' font-size='10' fill='white' text-anchor='middle'>Blog</text><rect x='230' y='80' width='80' height='25' rx='5' fill='%237209b7'/><text x='270' y='96' font-family='Arial' font-size='10' fill='white' text-anchor='middle'>Shop</text><text x='200' y='130' font-family='Arial' font-size='18' fill='white' text-anchor='middle' font-weight='bold'>Welcome</text><text x='200' y='150' font-family='Arial' font-size='18' fill='white' text-anchor='middle' font-weight='bold'>To My Website</text><rect x='100' y='165' width='200' height='25' rx='5' fill='white'/><text x='200' y='182' font-family='Arial' font-size='10' fill='black' text-anchor='middle'>Search</text><text x='200' y='210' font-family='Arial' font-size='9' fill='%23f72585' text-anchor='middle'>Selamat datang di Magraphic studio, Magraphic Studio Menyedakan Jasa Desain Online</text><text x='200' y='225' font-family='Arial' font-size='9' fill='%234cc9f0' text-anchor='middle'>Ingat Desain Ingat Magraphic Studio.</text><text x='200' y='240' font-family='Arial' font-size='9' fill='white' text-anchor='middle'>@Magraphic.studio</text></svg>"
+            },
+            {
+                id: 2,
+                name: "Desain Logo",
+                price: "Rp 15.000",
+                shortDesc: "Logo unik dan profesional untuk branding",
+                fullDesc: "Pembuatan logo unik dan profesional yang mencerminkan identitas bisnis Anda. Logo dirancang dengan konsep kreatif, mudah dikenali, dan dapat digunakan di berbagai media.",
+                category: "Branding",
+                duration: "1-3 hari",
+                // GAMBAR KEDUA: Desain logo
+                image: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'><rect width='400' height='250' fill='%23f8f9fa'/><rect x='50' y='30' width='300' height='190' rx='10' fill='white' stroke='%234361ee' stroke-width='2'/><text x='200' y='60' font-family='Arial' font-size='24' fill='%234361ee' text-anchor='middle' font-weight='bold'>DESIGNER LOGO</text><circle cx='120' y='110' r='30' fill='%237209b7' opacity='0.7'/><text x='120' y='115' font-family='Arial' font-size='12' fill='white' text-anchor='middle'>DESIGNER</text><circle cx='200' y='110' r='30' fill='%23f72585' opacity='0.7'/><text x='200' y='115' font-family='Arial' font-size='12' fill='white' text-anchor='middle'>LOREMIPSUM</text><circle cx='280' y='110' r='30' fill='%234cc9f0' opacity='0.7'/><text x='280' y='115' font-family='Arial' font-size='12' fill='white' text-anchor='middle'>DESIGN</text><rect x='100' y='150' width='200' height='40' rx='5' fill='%234361ee'/><text x='200' y='175' font-family='Arial' font-size='16' fill='white' text-anchor='middle'>DESIGN LOGO</text><text x='200' y='200' font-family='Arial' font-size='12' fill='%236c757d' text-anchor='middle'>LOREMIPSUM</text><text x='80' y='230' font-family='Arial' font-size='10' fill='%236c757d'>CREATIVE</text><text x='200' y='230' font-family='Arial' font-size='10' fill='%236c757d' text-anchor='middle'>GRAPHIC DESIGNER</text><text x='320' y='230' font-family='Arial' font-size='10' fill='%236c757d' text-anchor='end'>LOREMIPSUM</text></svg>"
+            },
+            {
+                id: 3,
+                name: "Desain Thumbnail YouTube",
+                price: "Rp 15.000",
+                shortDesc: "Thumbnail menarik untuk video YouTube",
+                fullDesc: "Desain thumbnail YouTube yang eye-catching dan menarik perhatian pemirsa. Thumbnail didesain dengan komposisi warna, typography, dan gambar yang optimal untuk meningkatkan klik.",
+                category: "Desain Media Sosial",
+                duration: "1-2 hari",
+                // GAMBAR KETIGA: Thumbnail YouTube
+                image: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'><rect width='400' height='250' fill='%23ff0000'/><rect x='20' y='20' width='360' height='210' rx='10' fill='white'/><rect x='40' y='40' width='320' height='140' fill='%23212529'/><text x='200' y='100' font-family='Arial' font-size='32' fill='white' text-anchor='middle' font-weight='bold'>NAME</text><text x='200' y='140' font-family='Arial' font-size='20' fill='white' text-anchor='middle'>Your Logo</text><rect x='40' y='190' width='320' height='30' rx='5' fill='%23ff0000'/><text x='200' y='210' font-family='Arial' font-size='18' fill='white' text-anchor='middle' font-weight='bold'>YOUTUBE THUMBNAIL</text><rect x='350' y='30' width='20' height='20' rx='10' fill='%23ff0000'/><text x='360' y='43' font-family='Arial' font-size='12' fill='white' text-anchor='middle'>▶</text></svg>"
+            },
+            {
+                id: 4,
+                name: "Desain Banner & Poster Digital",
+                price: "Rp 35.000",
+                shortDesc: "Banner dan poster untuk promosi digital",
+                fullDesc: "Pembuatan banner dan poster digital untuk keperluan promosi, event, atau kampanye marketing. Desain dibuat menarik dengan informasi yang jelas dan visual yang komunikatif.",
+                category: "Desain Grafis",
+                duration: "2-5 hari",
+                // GAMBAR KEEMPAT: Banner makanan
+                image: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='250' viewBox='0 0 400 250'><rect width='400' height='250' fill='%23ff6b6b'/><rect x='20' y='20' width='360' height='210' rx='10' fill='white'/><text x='200' y='60' font-family='Arial' font-size='32' fill='%23d63031' text-anchor='middle' font-weight='bold'>Delicious FOOD MENU</text><rect x='100' y='80' width='200' height='60' rx='10' fill='%23fdcb6e'/><text x='200' y='105' font-family='Arial' font-size='18' fill='%232c3e50' text-anchor='middle' font-weight='bold'>WEEKEND SPECIAL</text><text x='200' y='125' font-family='Arial' font-size='24' fill='%232c3e50' text-anchor='middle' font-weight='bold'>SAVE 50% OFF</text><rect x='50' y='150' width='120' height='40' rx='5' fill='%2300b894'/><text x='110' y='175' font-family='Arial' font-size='16' fill='white' text-anchor='middle'>UP TO</text><text x='110' y='195' font-family='Arial' font-size='20' fill='white' text-anchor='middle' font-weight='bold'>24/7</text><rect x='230' y='150' width='120' height='40' rx='5' fill='%236c5ce7'/><text x='290' y='175' font-family='Arial' font-size='16' fill='white' text-anchor='middle'>Home Delivery</text><rect x='140' y='200' width='120' height='30' rx='15' fill='%23e17055'/><text x='200' y='220' font-family='Arial' font-size='14' fill='white' text-anchor='middle' font-weight='bold'>ORDER NOW</text><text x='200' y='240' font-family='Arial' font-size='12' fill='%232c3e50' text-anchor='middle'>323-517-4946 WWW.YOURWEBSITE.COM</text></svg>"
+            }
+        ];
+
+        // DOM elements
+        const servicesGrid = document.getElementById('servicesGrid');
+        const serviceModal = document.getElementById('serviceModal');
+        const modalClose = document.getElementById('modalClose');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        const modalDanaBtn = document.getElementById('modalDanaBtn');
+        const modalWhatsAppBtn = document.getElementById('modalWhatsAppBtn');
+        const copyDanaNumber = document.getElementById('copyDanaNumber');
+        const copyNotification = document.getElementById('copyNotification');
+
+        // WhatsApp and Dana phone number
+        const whatsappNumber = "+628878840707";
+        const danaNumber = "+628878840707";
+        const gmailAddress = "luwiarjuna@gmail.com";
+
+        // Function to copy Dana number to clipboard
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                // Show notification
+                copyNotification.style.display = 'block';
+                setTimeout(() => {
+                    copyNotification.style.display = 'none';
+                }, 2000);
+            }).catch(err => {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                
+                // Show notification
+                copyNotification.style.display = 'block';
+                setTimeout(() => {
+                    copyNotification.style.display = 'none';
+                }, 2000);
+            });
+        }
+
+        // Function to open Dana app with multiple approaches
+        function openDanaApp() {
+            const cleanNumber = danaNumber.replace(/\s+/g, '').replace('+62', '0');
+            
+            // First, copy the number to clipboard
+            copyToClipboard(cleanNumber);
+            
+            // Try multiple Dana deep link formats
+            const danaLinks = [
+                // Format 1: Standard Dana deep link
+                `intent://transfer/${cleanNumber}#Intent;scheme=dana;package=id.dana;end`,
+                
+                // Format 2: Alternative Dana link
+                `dana://transfer?phone=${cleanNumber}`,
+                
+                // Format 3: Web Dana as fallback
+                `https://m.dana.id/m/portal/cash-out`
+            ];
+            
+            // Try the first link
+            window.location.href = danaLinks[0];
+            
+            // If first link fails, try second after a delay
+            setTimeout(() => {
+                window.location.href = danaLinks[1];
+            }, 100);
+            
+            // Final fallback to web Dana
+            setTimeout(() => {
+                window.open(danaLinks[2], '_blank');
+            }, 500);
+        }
+
+        // Function to render services
+        function renderServices() {
+            servicesGrid.innerHTML = '';
+            
+            servicesData.forEach(service => {
+                const serviceCard = document.createElement('div');
+                serviceCard.className = 'service-card';
+                serviceCard.innerHTML = `
+                    <div class="service-img">
+                        <img src="${service.image}" alt="${service.name}" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\"fallback-image\"><i class=\"fas fa-${service.id === 1 ? 'desktop' : service.id === 2 ? 'palette' : service.id === 3 ? 'video' : 'image'}\"></i><span>${service.name}</span></div>';">
+                    </div>
+                    <div class="service-content">
+                        <h3>${service.name}</h3>
+                        <div class="service-price">${service.price}</div>
+                        <p class="service-desc">${service.shortDesc}</p>
+                        <div class="service-buttons">
+                            <button class="btn-detail" data-id="${service.id}">Lihat Detail</button>
+                            <button class="btn-whatsapp" data-id="${service.id}">
+                                <i class="fab fa-whatsapp"></i> WhatsApp
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                servicesGrid.appendChild(serviceCard);
+            });
+            
+            // Add event listeners to detail buttons
+            document.querySelectorAll('.btn-detail').forEach(button => {
+                button.addEventListener('click', function() {
+                    const serviceId = parseInt(this.getAttribute('data-id'));
+                    openServiceModal(serviceId);
+                });
+            });
+            
+            // Add event listeners to WhatsApp buttons
+            document.querySelectorAll('.btn-whatsapp').forEach(button => {
+                button.addEventListener('click', function() {
+                    const serviceId = parseInt(this.getAttribute('data-id'));
+                    const service = servicesData.find(s => s.id === serviceId);
+                    openWhatsApp(service);
+                });
+            });
+        }
+
+        // Function to open service modal
+        function openServiceModal(serviceId) {
+            const service = servicesData.find(s => s.id === serviceId);
+            
+            if (!service) return;
+            
+            // Set modal content
+            document.getElementById('modalTitle').textContent = service.name;
+            document.getElementById('modalImage').src = service.image;
+            document.getElementById('modalImage').alt = service.name;
+            document.getElementById('modalServiceName').textContent = service.name;
+            document.getElementById('modalPrice').textContent = service.price;
+            document.getElementById('modalCategory').textContent = service.category;
+            document.getElementById('modalDuration').textContent = service.duration;
+            document.getElementById('modalFullDesc').textContent = service.fullDesc;
+            
+            // Set up copy Dana number functionality
+            copyDanaNumber.onclick = function() {
+                copyToClipboard(danaNumber.replace(/\s+/g, '').replace('+62', '0'));
+            };
+            
+            // Set up Dana button
+            modalDanaBtn.onclick = openDanaApp;
+            
+            // Set up WhatsApp button dengan pesan yang lebih lengkap
+            modalWhatsAppBtn.onclick = () => {
+                const cleanDanaNumber = danaNumber.replace(/\s+/g, '').replace('+62', '0');
+                const message = `Halo Juna Tech, saya sudah melakukan pembayaran untuk jasa ${service.name} (${service.price}) via Dana ke nomor ${cleanDanaNumber}. Berikut bukti transfer: [SILAKAN LAMPIRKAN BUKTI TRANSFER]`;
+                const whatsappURL = `https://api.whatsapp.com/send?phone=${encodeURIComponent(whatsappNumber)}&text=${encodeURIComponent(message)}`;
+                window.open(whatsappURL, '_blank');
+            };
+            
+            // Show modal
+            serviceModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Function to open WhatsApp (untuk tombol di card)
+        function openWhatsApp(service) {
+            const message = `Halo Juna Tech, saya tertarik dengan jasa ${service.name} (${service.price}). Bisa berikan informasi lebih detail?`;
+            const whatsappURL = `https://api.whatsapp.com/send?phone=${encodeURIComponent(whatsappNumber)}&text=${encodeURIComponent(message)}`;
+            window.open(whatsappURL, '_blank');
+        }
+
+        // Function to close modal
+        function closeModal() {
+            serviceModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Event listeners
+        modalClose.addEventListener('click', closeModal);
+        
+        // Close modal when clicking outside
+        serviceModal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+        
+        // Mobile menu toggle
+        mobileMenuBtn.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+            const icon = this.querySelector('i');
+            if (mainNav.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    mainNav.classList.remove('active');
+                    mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+                    mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+                    
+                    // Scroll to target
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderServices();
+            
+            // Highlight active nav link based on scroll position
+            window.addEventListener('scroll', function() {
+                const sections = document.querySelectorAll('section');
+                const navLinks = document.querySelectorAll('nav a');
+                
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (scrollY >= (sectionTop - 100)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
